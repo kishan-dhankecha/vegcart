@@ -1,17 +1,10 @@
-# vegcart
-
+<img src="https://github.com/Kishan-Dhankecha/vegcart/blob/main/VegApp-Banner.png" alt="Logo" width=100%>
 
 <p align="center">
-  <a href="https://flutter.io/">
-    <img src="https://github.com/Kishan-Dhankecha/vegcart/blob/main/appLogo.png" alt="Logo" width=256 height=256>
-  </a>
-
-  <h3 align="center">VegCart App</h3>
+ <h3 align="center">VegCart App</h3>
 
   <p align="center">
-    Example app with Flutter and Provider package
-    <br>
-    Base project made with much  :heart: . Contains basic, provider, and much more!
+    Contains basic coding practices, Provider, and much more!
     <br>
     <br>
     <a href="https://github.com/Kishan-Dhankecha/vegcart/issues/new">Report bug</a>
@@ -20,8 +13,6 @@
   </p>
 </p>
 
-
-<img src="https://github.com/Kishan-Dhankecha/vegcart/blob/main/VegApp-Banner.png" alt="Logo" width=1280 height=960>
 
 ## Quick start
 
