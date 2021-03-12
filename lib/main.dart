@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Screens/ProductDetailScreen.dart';
 import 'Screens/ProductOverviewScreen.dart';
 
 import 'theme.dart';
@@ -14,6 +15,9 @@ class VegCartApp extends StatelessWidget {
       darkTheme: darkThemeData(context),
       debugShowCheckedModeBanner: false,
       home: ProductOverviewScreen(),
+      routes: {
+        ProductDetailScreen.routeName: (ctx) => ProductDetailScreen(),
+      },
     );
   }
 }

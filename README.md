@@ -21,6 +21,8 @@
 </p>
 
 
+<img src="https://github.com/Kishan-Dhankecha/vegcart/blob/main/VegApp-Banner.png" alt="Logo" width=1280 height=960>
+
 ## Quick start
 
 This is a normal flutter app. You should follow the instructions in the [official documentation](https://flutter.io/docs/get-started/install).

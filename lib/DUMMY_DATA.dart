@@ -1,7 +1,7 @@
 import 'Modals/Product.dart';
 
 // ignore: non_constant_identifier_names
-final List<Product> DUMMY_PRODUCT_DATA = [
+final List<Product> DUMMY_DATA = [
   Product(
     id: "dk-product-2020/001",
     title: "Tomato",

@@ -5,7 +5,6 @@ import 'badge.dart';
 
 AppBar customAppBar(BuildContext context) {
   return AppBar(
-    backgroundColor: Theme.of(context).scaffoldBackgroundColor,
     leading: IconButton(
       icon: Icon(
         Icons.menu,

@@ -5,6 +5,13 @@ ThemeData lightThemeData(BuildContext context) {
   return ThemeData.light().copyWith(
     primaryColor: kPrimaryColor,
     scaffoldBackgroundColor: kContentColorDarkTheme,
+    appBarTheme: Theme.of(context).appBarTheme.copyWith(
+          backgroundColor: kContentColorDarkTheme,
+          textTheme: Theme.of(context).textTheme.apply(
+                bodyColor: kContentColorLightTheme,
+              ),
+          iconTheme: IconThemeData(color: kContentColorLightTheme),
+        ),
     iconTheme: IconThemeData(color: kContentColorLightTheme),
     textTheme: Theme.of(context).textTheme.apply(
           fontFamily: 'ConcertOne',
@@ -29,6 +36,13 @@ ThemeData darkThemeData(BuildContext context) {
   return ThemeData.dark().copyWith(
     primaryColor: kPrimaryColor,
     scaffoldBackgroundColor: kContentColorLightTheme,
+    appBarTheme: Theme.of(context).appBarTheme.copyWith(
+          backgroundColor: kContentColorLightTheme,
+          iconTheme: IconThemeData(color: kContentColorDarkTheme),
+          textTheme: Theme.of(context).textTheme.apply(
+                bodyColor: kContentColorDarkTheme,
+              ),
+        ),
     iconTheme: IconThemeData(color: kContentColorDarkTheme),
     textTheme: Theme.of(context).textTheme.apply(
           fontFamily: 'ConcertOne',
