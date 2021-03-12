@@ -7,10 +7,10 @@ ThemeData lightThemeData(BuildContext context) {
     scaffoldBackgroundColor: kContentColorDarkTheme,
     appBarTheme: Theme.of(context).appBarTheme.copyWith(
           backgroundColor: kContentColorDarkTheme,
+          iconTheme: IconThemeData(color: kContentColorLightTheme),
           textTheme: Theme.of(context).textTheme.apply(
                 bodyColor: kContentColorLightTheme,
               ),
-          iconTheme: IconThemeData(color: kContentColorLightTheme),
         ),
     iconTheme: IconThemeData(color: kContentColorLightTheme),
     textTheme: Theme.of(context).textTheme.apply(
