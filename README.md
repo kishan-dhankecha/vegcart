@@ -1,7 +1,5 @@
 <img src="https://github.com/Kishan-Dhankecha/vegcart/blob/main/VegApp-Banner.png" alt="Logo" width=100%>
 
-# vegcart
-
 <p align="center">
  <h3 align="center">VegCart App</h3>
 
