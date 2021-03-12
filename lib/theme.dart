@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 ThemeData lightThemeData(BuildContext context) {
   return ThemeData.light().copyWith(
     primaryColor: kPrimaryColor,
-    scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: kContentColorDarkTheme,
     iconTheme: IconThemeData(color: kContentColorLightTheme),
     textTheme: Theme.of(context).textTheme.apply(
           fontFamily: 'ConcertOne',
