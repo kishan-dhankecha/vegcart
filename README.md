@@ -21,7 +21,7 @@
 </p>
 
 
-<img src="https://github.com/Kishan-Dhankecha/vegcart/blob/main/VegApp-Banner.png" alt="Logo" width=1280 height=960>
+<img src="https://github.com/Kishan-Dhankecha/vegcart/blob/main/VegApp-Banner.png" alt="Logo" width=100%>
 
 ## Quick start
 
