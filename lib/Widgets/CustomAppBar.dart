@@ -5,13 +5,6 @@ import 'badge.dart';
 
 AppBar customAppBar(BuildContext context) {
   return AppBar(
-    leading: IconButton(
-      icon: Icon(
-        Icons.menu,
-        color: Theme.of(context).iconTheme.color,
-      ),
-      onPressed: () {},
-    ),
     centerTitle: true,
     title: AppLogoName(),
     actions: [

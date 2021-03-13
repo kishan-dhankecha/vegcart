@@ -20,8 +20,8 @@ ThemeData lightThemeData(BuildContext context) {
     colorScheme: ColorScheme.light(
       primary: kPrimaryColor,
       secondary: kSecondaryColor,
-      error: kErrorColor,
     ),
+    cardColor: kContentColorDarkTheme,
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: Colors.white,
       selectedItemColor: kContentColorLightTheme.withOpacity(0.7),
@@ -51,8 +51,8 @@ ThemeData darkThemeData(BuildContext context) {
     colorScheme: ColorScheme.dark().copyWith(
       primary: kPrimaryColor,
       secondary: kSecondaryColor,
-      error: kErrorColor,
     ),
+    cardColor: Color(0xFF00112b),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: kContentColorLightTheme,
       selectedItemColor: Colors.white70,
