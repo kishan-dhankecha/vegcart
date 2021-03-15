@@ -1,8 +1,31 @@
 import 'package:flutter/foundation.dart';
-import 'Product.dart';
+
+class Product with ChangeNotifier {
+  final String id, title, description, imgUrl, blurHash;
+  final double price, rating;
+  bool isFavorite;
+
+  Product({
+    @required this.id,
+    @required this.title,
+    @required this.imgUrl,
+    @required this.blurHash,
+    @required this.description,
+    @required this.rating,
+    @required this.price,
+    this.isFavorite = false,
+  });
+
+  void toggleFavorite() {
+    isFavorite = !isFavorite;
+    notifyListeners();
+  }
+}
 
 class Products extends ChangeNotifier {
   List<Product> get items => [..._items];
+  List<Product> get favorites =>
+      _items.where((prod) => prod.isFavorite).toList();
 
   Product findById(String prodId) {
     return _items.firstWhere((prod) => prod.id == prodId);

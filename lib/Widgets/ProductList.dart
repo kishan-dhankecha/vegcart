@@ -1,15 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../Provider/Product.dart';
 import '../Provider/Products.dart';
 
 import 'ProductItem.dart';
 
 class ProductList extends StatelessWidget {
+  final bool showFavs;
+
+  const ProductList(this.showFavs);
+
   @override
   Widget build(BuildContext context) {
     final productsData = Provider.of<Products>(context);
-    final products = productsData.items;
+    final products = showFavs ? productsData.favorites : productsData.items;
+    if (showFavs && products.length == 0)
+      return Center(
+        child: Text(
+          'No Favorites available\nTry adding some.',
+          style: Theme.of(context).textTheme.bodyText1,
+          textAlign: TextAlign.center,
+        ),
+      );
     return ListView.builder(
       padding: const EdgeInsets.all(15),
       physics: BouncingScrollPhysics(),
