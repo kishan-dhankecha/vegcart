@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../Provider/Product.dart';
 
 import '../Screens/ProductDetailScreen.dart';
-import '../DUMMY_DATA.dart';
 import 'BlurInImage.dart';
 import 'StarRating.dart';
 
 class ProductItem extends StatelessWidget {
-  final int index;
-
-  const ProductItem(this.index);
   @override
   Widget build(BuildContext context) {
+    final product = Provider.of<Product>(context, listen: false);
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Card(
@@ -21,14 +20,15 @@ class ProductItem extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, ProductDetailScreen.routeName, arguments: DUMMY_DATA[index].id);
+                Navigator.pushNamed(context, ProductDetailScreen.routeName,
+                    arguments: product.id);
               },
               child: Container(
-                height: 160,
+                height: (160.00),
                 width: double.infinity,
                 child: BlurInImage(
-                  DUMMY_DATA[index].imgUrl,
-                  blurHash: DUMMY_DATA[index].blurHash,
+                  product.imgUrl,
+                  blurHash: product.blurHash,
                 ),
               ),
             ),
@@ -44,17 +44,22 @@ class ProductItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        DUMMY_DATA[index].title,
+                        product.title,
                         style: Theme.of(context).textTheme.headline5,
                       ),
-                      StarRating(rating: DUMMY_DATA[index].rating),
+                      StarRating(
+                        rating: product.rating,
+                      ),
                     ],
+                  ),
+                  SizedBox(
+                    height: 15,
                   ),
                   Row(
                     children: [
                       RichText(
                         text: TextSpan(
-                          text: '₹${DUMMY_DATA[index].price}',
+                          text: '₹${product.price}',
                           style: Theme.of(context).textTheme.headline6,
                           children: [
                             TextSpan(
@@ -65,18 +70,21 @@ class ProductItem extends StatelessWidget {
                         ),
                       ),
                       Spacer(),
-                      IconButton(
-                        icon: Icon(
-                          DUMMY_DATA[index].isFavorite ? Icons.favorite : Icons.favorite_border,
-                          color: DUMMY_DATA[index].isFavorite ? Theme.of(context).colorScheme.secondary : Theme.of(context).textTheme.bodyText1.color,
+                      Consumer<Product>(
+                        builder: (_, product, __) => IconButton(
+                          icon: Icon(
+                            product.isFavorite
+                                ? Icons.favorite
+                                : Icons.favorite_border,
+                          ),
+                          onPressed: () {
+                            product.toggleFavorite();
+                          },
                         ),
-                        onPressed: () {
-                          //Toggle Favorite
-                        },
                       ),
                       ElevatedButton(
                         onPressed: () {},
-                        child: Text('ADD TO CART'),
+                        child: const Text('ADD TO CART'),
                       ),
                     ],
                   ),

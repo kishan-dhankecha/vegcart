@@ -27,6 +27,7 @@ class StarRating extends StatelessWidget {
         (index) => Icon(
           getIcon(index),
           size: size ?? 16,
+          color: Theme.of(context).colorScheme.secondary,
         ),
       ),
     );
