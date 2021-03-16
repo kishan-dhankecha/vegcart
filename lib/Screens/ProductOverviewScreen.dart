@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../Provider/Cart.dart';
 import '../Widgets/badge.dart';
 import '../Widgets/AppLogoName.dart';
 import '../Widgets/ProductList.dart';
@@ -20,7 +22,7 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
         title: AppLogoName(),
         actions: [
           PopupMenuButton(
-            icon: Icon(Icons.filter_list),
+            icon: const Icon(Icons.filter_alt),
             onSelected: (Filter val) {
               setState(() {
                 if (val == Filter.Fav) {
@@ -41,15 +43,17 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
               ),
             ],
           ),
-          Badge(
+          Consumer<Cart>(
+            builder: (_, cart, Widget child) {
+              return Badge(
+                child: child,
+                value: '${cart.itemCount}',
+              );
+            },
             child: IconButton(
-              icon: Icon(
-                Icons.shopping_cart_outlined,
-                color: Theme.of(context).iconTheme.color,
-              ),
+              icon: const Icon(Icons.shopping_cart_outlined),
               onPressed: () {},
             ),
-            value: '0',
           )
         ],
       ),

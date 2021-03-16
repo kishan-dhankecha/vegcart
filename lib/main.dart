@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'Provider/Cart.dart';
 import 'Provider/Products.dart';
 import 'Screens/ProductDetailScreen.dart';
 import 'Screens/ProductOverviewScreen.dart';
@@ -11,8 +12,11 @@ void main() => runApp(VegCartApp());
 class VegCartApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (BuildContext context) => Products(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => Products()),
+        ChangeNotifierProvider(create: (_) => Cart()),
+      ],
       child: MaterialApp(
         title: 'VegCart',
         theme: lightThemeData(context),
