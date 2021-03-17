@@ -17,7 +17,7 @@ class ProductList extends StatelessWidget {
       return Center(
         child: Text(
           'No Favorites available\nTry adding some.',
-          style: Theme.of(context).textTheme.bodyText1,
+          style: Theme.of(context).textTheme.headline6,
           textAlign: TextAlign.center,
         ),
       );

@@ -23,7 +23,31 @@ class Cart extends ChangeNotifier {
 
   int get itemCount => _items.length;
 
-  bool hasEntry(String prodId) => _items.containsKey(prodId);
+  double get totalAmount {
+    double total = 0.0;
+    _items.forEach((key, value) {
+      total += (value.price * value.quantity);
+    });
+    return total;
+  }
+
+  void removeAllItem(String productId) {
+    _items.remove(productId);
+    notifyListeners();
+  }
+
+  void removeSingleItem(String productId) {
+    _items.update(
+      productId,
+      (value) => CartItem(
+        id: value.id,
+        title: value.title,
+        quantity: value.quantity - 1,
+        price: value.price,
+      ),
+    );
+    notifyListeners();
+  }
 
   void addItem({String productId, double price, String title}) {
     if (_items.containsKey(productId)) {
