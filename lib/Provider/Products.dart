@@ -23,7 +23,12 @@ class Product with ChangeNotifier {
 }
 
 class Products extends ChangeNotifier {
-  List<Product> get items => [..._items];
+  List<Product> get items {
+    List<Product> temp = [..._items];
+    temp.shuffle();
+    return temp;
+  }
+
   List<Product> get favorites =>
       _items.where((prod) => prod.isFavorite).toList();
 

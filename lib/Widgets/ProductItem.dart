@@ -44,9 +44,11 @@ class ProductItem extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      product.title,
-                      style: Theme.of(context).textTheme.headline5,
+                    Expanded(
+                      child: Text(
+                        product.title,
+                        style: Theme.of(context).textTheme.headline5,
+                      ),
                     ),
                     StarRating(
                       rating: product.rating,
