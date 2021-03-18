@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'Provider/Orders.dart';
 import 'Provider/Cart.dart';
 import 'Provider/Products.dart';
 import 'Screens/CartScreen.dart';
+import 'Screens/OrdersScreen.dart';
 import 'Screens/ProductDetailScreen.dart';
 import 'Screens/ProductOverviewScreen.dart';
 
 import 'theme.dart';
 
-void main() => runApp(VegCartApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+  runApp(VegCartApp());
+}
 
 class VegCartApp extends StatelessWidget {
   @override
@@ -29,6 +38,7 @@ class VegCartApp extends StatelessWidget {
         routes: {
           ProductDetailScreen.routeName: (ctx) => ProductDetailScreen(),
           CartScreen.routeName: (ctx) => CartScreen(),
+          OrdersScreen.routeName: (ctx) => OrdersScreen(),
         },
       ),
     );

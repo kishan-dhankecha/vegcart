@@ -3,18 +3,26 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class AppLogoName extends StatelessWidget {
+  final firstName;
+  final lastName;
+
+  AppLogoName({
+    this.firstName = 'Veg',
+    this.lastName = 'Cart',
+  });
+
   @override
   Widget build(BuildContext context) {
     return RichText(
       text: TextSpan(
-        text: 'Veg',
+        text: firstName,
         style: Theme.of(context).textTheme.bodyText1.copyWith(
               color: kPrimaryColor,
               fontSize: 24,
             ),
         children: [
           TextSpan(
-            text: 'Cart',
+            text: lastName,
             style: Theme.of(context).textTheme.bodyText1.copyWith(
                   color: Theme.of(context).iconTheme.color,
                   fontSize: 24,

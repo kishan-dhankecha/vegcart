@@ -64,7 +64,7 @@ class Cart extends ChangeNotifier {
       _items.putIfAbsent(
         productId,
         () => CartItem(
-          id: '$productId-cart',
+          id: 'Cart-$productId',
           title: title,
           quantity: 1,
           price: price,
