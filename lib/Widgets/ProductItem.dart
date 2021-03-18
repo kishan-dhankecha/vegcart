@@ -62,7 +62,7 @@ class ProductItem extends StatelessWidget {
                   children: [
                     RichText(
                       text: TextSpan(
-                        text: '₹${product.price}',
+                        text: '₹${product.price.toStringAsFixed(2)}',
                         style: Theme.of(context).textTheme.headline6,
                         children: [
                           TextSpan(
@@ -91,6 +91,21 @@ class ProductItem extends StatelessWidget {
                           title: product.title,
                           productId: product.id,
                           price: product.price,
+                        );
+                        ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text('1 ${product.title} added to cart.'),
+                            duration: Duration(seconds: 2),
+                            action: SnackBarAction(
+                              label: 'UNDO',
+                              textColor:
+                                  Theme.of(context).colorScheme.secondary,
+                              onPressed: () {
+                                cart.removeSingleItem(product.id);
+                              },
+                            ),
+                          ),
                         );
                       },
                       child: const Text('ADD TO CART'),

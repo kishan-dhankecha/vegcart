@@ -40,7 +40,7 @@ class CartItem extends StatelessWidget {
                 padding: const EdgeInsets.all(5.0),
                 child: FittedBox(
                   child: Text(
-                    '₹$price',
+                    '₹${price.toStringAsFixed(2)}',
                     style: Theme.of(context).textTheme.bodyText1,
                   ),
                 ),

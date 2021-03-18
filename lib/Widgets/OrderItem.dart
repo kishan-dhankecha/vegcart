@@ -22,7 +22,7 @@ class _OrderItemState extends State<OrderItem> {
         children: [
           ListTile(
             title: Text(
-              '₹${widget.order.amount}',
+              '₹${widget.order.amount.toStringAsFixed(2)}',
               style: Theme.of(context).textTheme.headline5,
             ),
             subtitle: Text(
@@ -66,7 +66,7 @@ class _OrderItemState extends State<OrderItem> {
                               Text('${prod.quantity}'),
                             ),
                             DataCell(
-                              Text('₹${prod.price}'),
+                              Text('₹${prod.price.toStringAsFixed(2)}'),
                             ),
                           ],
                         ),
