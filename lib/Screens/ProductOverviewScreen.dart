@@ -23,6 +23,7 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
         title: AppLogoName(),
         actions: [
           PopupMenuButton(
+            tooltip: 'Filter',
             icon: const Icon(Icons.filter_alt),
             onSelected: (Filter val) {
               setState(() {
@@ -53,6 +54,7 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
             },
             child: IconButton(
               icon: const Icon(Icons.shopping_cart_outlined),
+              tooltip: 'Cart',
               onPressed: () {
                 Navigator.pushNamed(context, CartScreen.routeName);
               },

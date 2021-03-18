@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'Provider/Orders.dart';
 import 'Provider/Cart.dart';
 import 'Provider/Products.dart';
 import 'Screens/CartScreen.dart';
@@ -17,6 +18,7 @@ class VegCartApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => Products()),
         ChangeNotifierProvider(create: (_) => Cart()),
+        ChangeNotifierProvider(create: (_) => Orders()),
       ],
       child: MaterialApp(
         title: 'VegCart',

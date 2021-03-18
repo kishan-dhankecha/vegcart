@@ -23,11 +23,7 @@ class Product with ChangeNotifier {
 }
 
 class Products extends ChangeNotifier {
-  List<Product> get items {
-    List<Product> temp = [..._items];
-    temp.shuffle();
-    return temp;
-  }
+  List<Product> get items => [..._items];
 
   List<Product> get favorites =>
       _items.where((prod) => prod.isFavorite).toList();
@@ -38,67 +34,7 @@ class Products extends ChangeNotifier {
 
   List<Product> _items = <Product>[
     Product(
-      id: "dk-product-2020/001",
-      title: "Tomato",
-      rating: 4.2,
-      price: 28.25,
-      imgUrl:
-          "https://www.thermofisher.com/blog/wp-content/uploads/2014/08/tomatoes.jpg",
-      description:
-          "Tomatoes are the major dietary source of the antioxidant lycopene, which has been linked to many health benefits, including reduced risk of heart disease and cancer. They are also a great source of vitamin C, potassium, folate, and vitamin K.",
-      blurHash:
-          ':wRUdZjYyrRkyDtQo}s:tRo}WVVsniW;jFniy?aeVst7i^WVVsWBspnin%aeSLofX7X8yDX8VsoLRjjGkCfiR*V@a{kWj[n%ofofW;kCWBayoMV[j]j[a|aKj[o}oLaefPjZ',
-    ),
-    Product(
-      id: "dk-product-2020/002",
-      title: "Potato",
-      rating: 4,
-      price: 22.50,
-      imgUrl:
-          "https://www.mr-fruity.co.uk/wp-content/uploads/2019/04/potato-04.jpg",
-      blurHash:
-          ':nQJ4JWZ.9s*tSj]xuj?%NtRjrM{WBofaeWB.TkCWAV@V?ogRPafWARPRQtRt7WCj]ozxujrV?bca}jsofj[RjWBt7ozj]aeaxWBogjsWAkCj[aeayaeofflf7jsaxWBj[jt',
-      description:
-          "Potatoes contain a good amount of carbs and fiber, as well as vitamin C, vitamin B6, potassium and manganese. Their nutrient contents can vary depending on the type of potato and cooking method.",
-    ),
-    Product(
-      id: "dk-product-2020/003",
-      title: "Acorn Squash",
-      rating: 3,
-      price: 266.30,
-      imgUrl:
-          "https://tbrnewsmedia.com/wp-content/uploads/2020/10/Acorn-Squash-scaled.jpg",
-      blurHash:
-          ':vOy;JxuyENe.8j?kWt6s;ofWBj?ofbIR*WB.TRjnhoJM{jsRPWCbcbHa}WBayjFoLs.x]bHRit6RjWEt7s:oLaxj[a#WAj@kCbbxZj[WBWCjsj[ogayWVWBkCofaebHofWV',
-      description:
-          "Acorn squash, also called pepper squash or Des Moines squash, is a winter squash with distinctive longitudinal ridges on its exterior and sweet, yellow-orange flesh inside. Although considered a winter squash, acorn squash belongs to the same species as all summer squashes.",
-    ),
-    Product(
-      id: "dk-product-2020/004",
-      title: "Beetroot",
-      rating: 5,
-      price: 42.00,
-      imgUrl:
-          "https://post.healthline.com/wp-content/uploads/2020/09/AN172-Beets-732x549-Thumb_0.jpg",
-      blurHash:
-          ':EG@rqy=.l\$*5kAUD+%L+%ko\$fS}R\$NsM{oyFxELIBIn-9M{xBNGwGJ#tMr{a%oxRRouo{Sxxo=|ohS\$M}S1InNHEL%2-Vt4xuR*WExGIoIpn+X8xt%1-ooLs:R%RiRkELod',
-      description:
-          "The beetroot is the taproot portion of a beet plant, usually known in Canada and the USA as beets while the vegetable is referred to as beetroot in British English, and also known as the table beet, garden beet, red beet, dinner beet or golden beet.",
-    ),
-    Product(
-      id: "dk-product-2020/005",
-      title: "Basil",
-      rating: 4,
-      price: 348.50,
-      imgUrl:
-          "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/266425_2200-732x549.jpg",
-      blurHash:
-          ':hI~P2o\$~WxZt8odWEt7??jvVuWURQjbs;ogxabXRRR\$NFbFobof-Xo#j_jFWTWBWAe=NGxIWAa#WSoebFj@n.oMs:WBWAjbWBa#xIk8oyaxj?RkWBj]ogt5s:ofoMofWDaf',
-      description:
-          "Basil, also called great basil, is a culinary herb of the family Lamiaceae. Basil is native to tropical regions from central Africa to Southeast Asia. It is a tender plant, and is used in cuisines worldwide.",
-    ),
-    Product(
-      id: "dk-product-2020/006",
+      id: "006",
       title: "Carrot",
       rating: 4,
       price: 48.60,
@@ -110,7 +46,7 @@ class Products extends ChangeNotifier {
           "The carrot is a root vegetable, usually orange in color, though purple, black, red, white, and yellow cultivars exist. They are a domesticated form of the wild carrot, Daucus carota, native to Europe and Southwestern Asia. The plant probably originated in Persia and was originally cultivated for its leaves and seeds.",
     ),
     Product(
-      id: "dk-product-2020/008",
+      id: "008",
       title: "Cucumber",
       rating: 4,
       price: 35.20,
@@ -122,7 +58,67 @@ class Products extends ChangeNotifier {
           "Cucumber is a widely-cultivated creeping vine plant in the Cucurbitaceae gourd family that bears cucumiform fruits, which are used as vegetables. There are three main varieties of cucumber—slicing, pickling, and burpless/seedless—within which several cultivars have been created.",
     ),
     Product(
-      id: "dk-product-2020/009",
+      id: "001",
+      title: "Tomato",
+      rating: 4.2,
+      price: 28.25,
+      imgUrl:
+          "https://www.thermofisher.com/blog/wp-content/uploads/2014/08/tomatoes.jpg",
+      description:
+          "Tomatoes are the major dietary source of the antioxidant lycopene, which has been linked to many health benefits, including reduced risk of heart disease and cancer. They are also a great source of vitamin C, potassium, folate, and vitamin K.",
+      blurHash:
+          ':wRUdZjYyrRkyDtQo}s:tRo}WVVsniW;jFniy?aeVst7i^WVVsWBspnin%aeSLofX7X8yDX8VsoLRjjGkCfiR*V@a{kWj[n%ofofW;kCWBayoMV[j]j[a|aKj[o}oLaefPjZ',
+    ),
+    Product(
+      id: "002",
+      title: "Potato",
+      rating: 4,
+      price: 22.50,
+      imgUrl:
+          "https://www.mr-fruity.co.uk/wp-content/uploads/2019/04/potato-04.jpg",
+      blurHash:
+          ':nQJ4JWZ.9s*tSj]xuj?%NtRjrM{WBofaeWB.TkCWAV@V?ogRPafWARPRQtRt7WCj]ozxujrV?bca}jsofj[RjWBt7ozj]aeaxWBogjsWAkCj[aeayaeofflf7jsaxWBj[jt',
+      description:
+          "Potatoes contain a good amount of carbs and fiber, as well as vitamin C, vitamin B6, potassium and manganese. Their nutrient contents can vary depending on the type of potato and cooking method.",
+    ),
+    Product(
+      id: "003",
+      title: "Acorn Squash",
+      rating: 3,
+      price: 266.30,
+      imgUrl:
+          "https://tbrnewsmedia.com/wp-content/uploads/2020/10/Acorn-Squash-scaled.jpg",
+      blurHash:
+          ':vOy;JxuyENe.8j?kWt6s;ofWBj?ofbIR*WB.TRjnhoJM{jsRPWCbcbHa}WBayjFoLs.x]bHRit6RjWEt7s:oLaxj[a#WAj@kCbbxZj[WBWCjsj[ogayWVWBkCofaebHofWV',
+      description:
+          "Acorn squash, also called pepper squash or Des Moines squash, is a winter squash with distinctive longitudinal ridges on its exterior and sweet, yellow-orange flesh inside. Although considered a winter squash, acorn squash belongs to the same species as all summer squashes.",
+    ),
+    Product(
+      id: "004",
+      title: "Beetroot",
+      rating: 5,
+      price: 42.00,
+      imgUrl:
+          "https://post.healthline.com/wp-content/uploads/2020/09/AN172-Beets-732x549-Thumb_0.jpg",
+      blurHash:
+          ':EG@rqy=.l\$*5kAUD+%L+%ko\$fS}R\$NsM{oyFxELIBIn-9M{xBNGwGJ#tMr{a%oxRRouo{Sxxo=|ohS\$M}S1InNHEL%2-Vt4xuR*WExGIoIpn+X8xt%1-ooLs:R%RiRkELod',
+      description:
+          "The beetroot is the taproot portion of a beet plant, usually known in Canada and the USA as beets while the vegetable is referred to as beetroot in British English, and also known as the table beet, garden beet, red beet, dinner beet or golden beet.",
+    ),
+    Product(
+      id: "005",
+      title: "Basil",
+      rating: 4,
+      price: 348.50,
+      imgUrl:
+          "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/266425_2200-732x549.jpg",
+      blurHash:
+          ':hI~P2o\$~WxZt8odWEt7??jvVuWURQjbs;ogxabXRRR\$NFbFobof-Xo#j_jFWTWBWAe=NGxIWAa#WSoebFj@n.oMs:WBWAjbWBa#xIk8oyaxj?RkWBj]ogt5s:ofoMofWDaf',
+      description:
+          "Basil, also called great basil, is a culinary herb of the family Lamiaceae. Basil is native to tropical regions from central Africa to Southeast Asia. It is a tender plant, and is used in cuisines worldwide.",
+    ),
+    Product(
+      id: "009",
       title: "Sweet potato",
       rating: 3,
       price: 32.30,
@@ -134,7 +130,7 @@ class Products extends ChangeNotifier {
           "The sweet potato or sweetpotato is a dicotyledonous plant that belongs to the bindweed or morning glory family, Convolvulaceae. Its large, starchy, sweet-tasting, tuberous roots are a root vegetable. The young shoots and leaves are sometimes eaten as greens.",
     ),
     Product(
-      id: "dk-product-2020/010",
+      id: "010",
       title: "Radish",
       rating: 4,
       price: 63.70,
@@ -145,7 +141,7 @@ class Products extends ChangeNotifier {
           "The radish is an edible root vegetable of the family Brassicaceae that was domesticated in Asia prior to Roman times. Radishes are grown and consumed throughout the world, being mostly eaten raw as a crunchy salad vegetable with a pungent flavor.",
     ),
     Product(
-      id: "dk-product-2020/011",
+      id: "011",
       title: "Cabbage",
       rating: 5,
       price: 75.00,
@@ -157,7 +153,7 @@ class Products extends ChangeNotifier {
           "Cabbage is a leafy green, red, or white biennial plant grown as an annual vegetable crop for its dense-leaved heads. It is descended from the wild cabbage, and belongs to the 'cole crops' or brassicas, meaning it is closely related to broccoli and cauliflower; Brussels sprouts; and Savoy cabbage.",
     ),
     Product(
-      id: "dk-product-2020/012",
+      id: "012",
       title: "Onion",
       rating: 4,
       price: 124.60,
@@ -168,7 +164,7 @@ class Products extends ChangeNotifier {
           "The onion, also known as the bulb onion or common onion, is a vegetable that is the most widely cultivated species of the genus Allium. Its close relatives include the garlic, scallion, shallot, leek, chive, and Chinese onion.",
     ),
     Product(
-      id: "dk-product-2020/013",
+      id: "013",
       title: "Cauliflower",
       rating: 5,
       price: 46.20,
@@ -180,7 +176,7 @@ class Products extends ChangeNotifier {
           "Cauliflower is one of several vegetables in the species Brassica oleracea in the genus Brassica, which is in the Brassicaceae family. It is an annual plant that reproduces by seed. Typically, only the head is eaten – the edible white flesh sometimes called 'curd'.",
     ),
     Product(
-      id: "dk-product-2020/014",
+      id: "014",
       title: "Button Mushroom",
       rating: 2,
       price: 200.00,
@@ -192,7 +188,7 @@ class Products extends ChangeNotifier {
           "A mushroom or toadstool is the fleshy, spore-bearing fruiting body of a fungus, typically produced above ground, on soil, or on its food source.",
     ),
     Product(
-      id: "dk-product-2020/015",
+      id: "015",
       title: "Broccoli",
       rating: 4,
       price: 78.20,
@@ -204,7 +200,7 @@ class Products extends ChangeNotifier {
           "Broccoli is an edible green plant in the cabbage family whose large flowering head, stalk and small associated leaves are eaten as a vegetable. Broccoli is classified in the Italica cultivar group of the species Brassica oleracea.",
     ),
     Product(
-      id: "dk-product-2020/016",
+      id: "016",
       title: "Corn",
       rating: 3,
       price: 52.00,
@@ -216,7 +212,7 @@ class Products extends ChangeNotifier {
           "Corn is a starchy vegetable and cereal grain that has been eaten all over the world for centuries. It's rich in fiber, vitamins and minerals. However, the health benefits of corn are controversial — while it contains beneficial nutrients, it can also spike blood sugar levels.",
     ),
     Product(
-      id: "dk-product-2020/017",
+      id: "017",
       title: "Bitter melon",
       rating: 3,
       price: 54.20,
@@ -228,7 +224,7 @@ class Products extends ChangeNotifier {
           "Karela, also known as bitter gourd and bitter melon, is a popular ingredient in many Asian countries. In India, it is often made into a dish called khatta meetha karela, where the bitter gourd is cooked with several ingredients, including cumin, chilies, ginger, coriander, and turmeric.",
     ),
     Product(
-      id: "dk-product-2020/018",
+      id: "018",
       title: "Okra",
       rating: 5,
       price: 38.45,
@@ -240,7 +236,7 @@ class Products extends ChangeNotifier {
           "Okra or Okro, Abelmoschus esculentus, known in many English-speaking countries as ladies' fingers or ochro, is a flowering plant in the mallow family. It is valued for its edible green seed pods. The geographical origin of okra is disputed, with supporters of West African, Ethiopian, and South Asian origins.",
     ),
     Product(
-      id: "dk-product-2020/019",
+      id: "019",
       title: "Aubergine",
       rating: 4,
       price: 28.35,
@@ -252,7 +248,7 @@ class Products extends ChangeNotifier {
           "Eggplant, aubergine or brinjal is a plant species in the nightshade family Solanaceae. Solanum melongena is grown worldwide for its edible fruit. Most commonly purple, the spongy, absorbent fruit is used in several cuisines. Typically used as a vegetable in cooking, it is a berry by botanical definition.",
     ),
     Product(
-      id: "dk-product-2020/020",
+      id: "020",
       title: "Garlic",
       rating: 5,
       price: 135.85,

@@ -73,4 +73,9 @@ class Cart extends ChangeNotifier {
     }
     notifyListeners();
   }
+
+  void clear() {
+    _items = <String, CartItem>{};
+    notifyListeners();
+  }
 }
