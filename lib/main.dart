@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'Provider/Orders.dart';
+
 import 'Provider/Cart.dart';
+import 'Provider/Orders.dart';
 import 'Provider/Products.dart';
 import 'Screens/CartScreen.dart';
 import 'Screens/OrdersScreen.dart';
 import 'Screens/ProductDetailScreen.dart';
 import 'Screens/ProductOverviewScreen.dart';
-
 import 'theme.dart';
 
 void main() {

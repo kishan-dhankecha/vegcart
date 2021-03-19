@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../Provider/Products.dart';
 import '../Provider/Cart.dart';
+import '../Provider/Products.dart';
 import '../Screens/ProductDetailScreen.dart';
 import 'BlurInImage.dart';
 import 'StarRating.dart';

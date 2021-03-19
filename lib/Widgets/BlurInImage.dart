@@ -4,6 +4,7 @@ import 'package:flutter_blurhash/flutter_blurhash.dart';
 class BlurInImage extends StatelessWidget {
   final String url;
   final String blurHash;
+
   const BlurInImage(
     this.url, {
     this.blurHash,

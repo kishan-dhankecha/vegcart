@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../Provider/Orders.dart';
+
 import '../Widgets/CartItem.dart';
+import '../Provider/Orders.dart';
 import '../Provider/Cart.dart' show Cart;
 
 class CartScreen extends StatelessWidget {
   static const routeName = '/cart';
+
   @override
   Widget build(BuildContext context) {
     final cart = Provider.of<Cart>(context);

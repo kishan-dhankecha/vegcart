@@ -1,5 +1,6 @@
-import 'constants.dart';
 import 'package:flutter/material.dart';
+
+import 'constants.dart';
 
 ThemeData lightThemeData(BuildContext context) {
   return ThemeData.light().copyWith(

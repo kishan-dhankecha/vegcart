@@ -11,11 +11,35 @@ class CartItem extends StatelessWidget {
 
   const CartItem(
       {this.id, this.productId, this.price, this.quantity, this.title});
+
   @override
   Widget build(BuildContext context) {
     return Dismissible(
       key: ValueKey(id),
       direction: DismissDirection.endToStart,
+      confirmDismiss: (_) {
+        return showDialog(
+          context: context,
+          builder: (ctx) => AlertDialog(
+            title: const Text('Are you sure?'),
+            content: Text('You are going to remove all $title from cart.'),
+            actions: [
+              ElevatedButton(
+                child: const Text('No'),
+                onPressed: () {
+                  Navigator.of(ctx).pop(false);
+                },
+              ),
+              ElevatedButton(
+                child: const Text('Yes'),
+                onPressed: () {
+                  Navigator.of(ctx).pop(true);
+                },
+              ),
+            ],
+          ),
+        );
+      },
       onDismissed: (_) {
         Provider.of<Cart>(context, listen: false).removeAllItem(productId);
       },

@@ -14,6 +14,7 @@ class OrderItem extends StatefulWidget {
 
 class _OrderItemState extends State<OrderItem> {
   var _expanded = false;
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -44,7 +45,7 @@ class _OrderItemState extends State<OrderItem> {
               children: [
                 Divider(),
                 DataTable(
-                  columns: [
+                  columns: const [
                     DataColumn(
                       label: Text('Product'),
                     ),
@@ -52,7 +53,7 @@ class _OrderItemState extends State<OrderItem> {
                       label: Text('Quantity'),
                     ),
                     DataColumn(
-                      label: Text('Amount'),
+                      label: Text('Price'),
                     ),
                   ],
                   rows: widget.order.products
@@ -72,8 +73,7 @@ class _OrderItemState extends State<OrderItem> {
                         ),
                       )
                       .toList(),
-                  dataTextStyle:
-                      Theme.of(context).textTheme.bodyText1.copyWith(),
+                  dataTextStyle: Theme.of(context).textTheme.bodyText1,
                 ),
               ],
             ),
