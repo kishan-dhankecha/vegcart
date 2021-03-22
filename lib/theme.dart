@@ -12,10 +12,11 @@ ThemeData lightThemeData(BuildContext context) {
           textTheme: Theme.of(context).textTheme.apply(
                 bodyColor: kContentColorLightTheme,
               ),
+          centerTitle: true,
         ),
     iconTheme: IconThemeData(color: kContentColorLightTheme),
     textTheme: Theme.of(context).textTheme.apply(
-          fontFamily: 'ConcertOne',
+          fontFamily: 'Vidaloka',
           bodyColor: kContentColorLightTheme,
         ),
     colorScheme: ColorScheme.light(
@@ -43,10 +44,11 @@ ThemeData darkThemeData(BuildContext context) {
           textTheme: Theme.of(context).textTheme.apply(
                 bodyColor: kContentColorDarkTheme,
               ),
+          centerTitle: true,
         ),
     iconTheme: IconThemeData(color: kContentColorDarkTheme),
     textTheme: Theme.of(context).textTheme.apply(
-          fontFamily: 'ConcertOne',
+          fontFamily: 'Vidaloka',
           bodyColor: kContentColorDarkTheme,
         ),
     colorScheme: ColorScheme.dark().copyWith(

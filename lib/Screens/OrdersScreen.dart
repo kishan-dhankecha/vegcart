@@ -18,7 +18,6 @@ class OrdersScreen extends StatelessWidget {
           firstName: 'Past',
           lastName: 'Orders',
         ),
-        centerTitle: true,
       ),
       drawer: AppDrawer(),
       body: orders.items.length == 0

@@ -20,6 +20,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   fonts:
-    - family: ConcertOne
+    - family: Vidaloka
       fonts:
-        - asset: assets/fonts/ConcertOne-Regular.ttf
+        - asset: assets/fonts/Vidaloka-Regular.ttf

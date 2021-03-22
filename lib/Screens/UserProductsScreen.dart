@@ -17,7 +17,6 @@ class UserProductsScreen extends StatelessWidget {
           firstName: 'Your',
           lastName: 'Products',
         ),
-        centerTitle: true,
         actions: [
           IconButton(
             icon: const Icon(Icons.add),

@@ -14,7 +14,6 @@ class CartScreen extends StatelessWidget {
     final cart = Provider.of<Cart>(context);
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: AppLogoName(
           firstName: 'Your',
           lastName: 'Cart',

@@ -23,7 +23,6 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: const AppLogoName(),
         actions: [
           PopupMenuButton(
