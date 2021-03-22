@@ -16,6 +16,16 @@ class Product with ChangeNotifier {
     this.isFavorite = false,
   });
 
+  @override
+  String toString() {
+    return {
+      "title": title,
+      "imgUrl": imgUrl,
+      "description": description,
+      "price": id
+    }.toString();
+  }
+
   void toggleFavorite() {
     isFavorite = !isFavorite;
     notifyListeners();

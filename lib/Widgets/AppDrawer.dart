@@ -16,7 +16,7 @@ class AppDrawer extends StatelessWidget {
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  AppLogoName(),
+                  const AppLogoName(),
                   Text(
                     'v1.0.0',
                     style: Theme.of(context).textTheme.bodyText1,
