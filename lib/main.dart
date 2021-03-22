@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'Provider/Cart.dart';
 import 'Provider/Orders.dart';
 import 'Provider/Products.dart';
+import 'Screens/UserProductsScreen.dart';
 import 'Screens/CartScreen.dart';
 import 'Screens/OrdersScreen.dart';
 import 'Screens/ProductDetailScreen.dart';
@@ -39,6 +40,7 @@ class VegCartApp extends StatelessWidget {
           ProductDetailScreen.routeName: (ctx) => ProductDetailScreen(),
           CartScreen.routeName: (ctx) => CartScreen(),
           OrdersScreen.routeName: (ctx) => OrdersScreen(),
+          UserProductsScreen.routeName: (ctx) => UserProductsScreen(),
         },
       ),
     );

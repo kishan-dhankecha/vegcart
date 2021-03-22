@@ -14,7 +14,7 @@ class OrdersScreen extends StatelessWidget {
     final orders = Provider.of<Orders>(context);
     return Scaffold(
       appBar: AppBar(
-        title: AppLogoName(
+        title: const AppLogoName(
           firstName: 'Past',
           lastName: 'Orders',
         ),

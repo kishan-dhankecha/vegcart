@@ -6,7 +6,7 @@ class AppLogoName extends StatelessWidget {
   final firstName;
   final lastName;
 
-  AppLogoName({
+  const AppLogoName({
     this.firstName = 'Veg',
     this.lastName = 'Cart',
   });

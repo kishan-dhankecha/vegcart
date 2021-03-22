@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../Widgets/AppLogoName.dart';
 import '../Widgets/CartItem.dart';
 import '../Provider/Orders.dart';
 import '../Provider/Cart.dart' show Cart;
@@ -14,7 +15,10 @@ class CartScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Basket'),
+        title: AppLogoName(
+          firstName: 'Your',
+          lastName: 'Cart',
+        ),
       ),
       body: cart.itemCount == 0
           ? Center(

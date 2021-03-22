@@ -24,7 +24,7 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: AppLogoName(),
+        title: const AppLogoName(),
         actions: [
           PopupMenuButton(
             tooltip: 'Filter',
