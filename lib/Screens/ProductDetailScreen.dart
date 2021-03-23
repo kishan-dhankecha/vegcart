@@ -16,19 +16,16 @@ class ProductDetailScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('${product.title}'),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+      body: ListView(
         children: [
-          Expanded(
-            child: ClipRRect(
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(30),
-                bottomRight: Radius.circular(30),
-              ),
-              child: BlurInImage(
-                product.imgUrl,
-                blurHash: product.blurHash,
-              ),
+          ClipRRect(
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(30),
+              bottomRight: Radius.circular(30),
+            ),
+            child: BlurInImage(
+              product.imgUrl,
+              blurHash: product.blurHash,
             ),
           ),
           Padding(
