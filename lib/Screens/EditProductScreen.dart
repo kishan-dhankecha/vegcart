@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../Widgets/AppLogoName.dart';
+
 class EditProductScreen extends StatefulWidget {
   static const routeNAme = '/edit-product';
   @override
@@ -8,7 +10,16 @@ class EditProductScreen extends StatefulWidget {
 
 class _EditProductScreenState extends State<EditProductScreen> {
   @override
+  @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: const AppLogoName(
+          firstName: 'Add',
+          lastName: 'Product',
+        ),
+      ),
+      body: Container(),
+    );
   }
 }
