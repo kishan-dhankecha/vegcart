@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'Provider/Cart.dart';
 import 'Provider/Orders.dart';
 import 'Provider/Products.dart';
+import 'Screens/EditProductScreen.dart';
 import 'Screens/UserProductsScreen.dart';
 import 'Screens/CartScreen.dart';
 import 'Screens/OrdersScreen.dart';
@@ -26,9 +27,15 @@ class VegCartApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => Products()),
-        ChangeNotifierProvider(create: (_) => Cart()),
-        ChangeNotifierProvider(create: (_) => Orders()),
+        ChangeNotifierProvider(
+          create: (_) => Products(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => Cart(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => Orders(),
+        ),
       ],
       child: MaterialApp(
         title: 'VegCart',
@@ -37,10 +44,11 @@ class VegCartApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: ProductOverviewScreen(),
         routes: {
-          ProductDetailScreen.routeName: (ctx) => ProductDetailScreen(),
-          CartScreen.routeName: (ctx) => CartScreen(),
-          OrdersScreen.routeName: (ctx) => OrdersScreen(),
-          UserProductsScreen.routeName: (ctx) => UserProductsScreen(),
+          ProductDetailScreen.routeName: (_) => ProductDetailScreen(),
+          CartScreen.routeName: (_) => CartScreen(),
+          OrdersScreen.routeName: (_) => OrdersScreen(),
+          UserProductsScreen.routeName: (_) => UserProductsScreen(),
+          EditProductScreen.routeNAme: (_) => EditProductScreen(),
         },
       ),
     );

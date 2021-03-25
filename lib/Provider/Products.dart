@@ -22,7 +22,7 @@ class Product with ChangeNotifier {
       "title": title,
       "imgUrl": imgUrl,
       "description": description,
-      "price": id
+      "price": price
     }.toString();
   }
 
