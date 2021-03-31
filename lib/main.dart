@@ -48,7 +48,7 @@ class VegCartApp extends StatelessWidget {
           CartScreen.routeName: (_) => CartScreen(),
           OrdersScreen.routeName: (_) => OrdersScreen(),
           UserProductsScreen.routeName: (_) => UserProductsScreen(),
-          EditProductScreen.routeNAme: (_) => EditProductScreen(),
+          EditProductScreen.routeName: (_) => EditProductScreen(),
         },
       ),
     );
