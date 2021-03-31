@@ -19,12 +19,15 @@ class UserProductsScreen extends StatelessWidget {
           lastName: 'Products',
         ),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.add),
+          TextButton(
+            child: Text(
+              'Add',
+              style: Theme.of(context).textTheme.bodyText1,
+            ),
             onPressed: () {
               Navigator.pushNamed(context, EditProductScreen.routeName);
             },
-          )
+          ),
         ],
       ),
       drawer: AppDrawer(),

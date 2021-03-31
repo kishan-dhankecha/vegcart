@@ -1,9 +1,8 @@
-import 'dart:developer';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-import '../Provider/Products.dart' show Product;
+import '../Provider/Products.dart';
 import '../Widgets/AppLogoName.dart';
 
 class EditProductScreen extends StatefulWidget {
@@ -35,9 +34,12 @@ class _EditProductScreenState extends State<EditProductScreen> {
 
   void _saveForm() {
     final isValidate = _formKey.currentState.validate();
-    if (!isValidate) return;
+    if (!isValidate) {
+      return;
+    }
     _formKey.currentState.save();
-    log(_editedProduct.toString());
+    Provider.of<Products>(context, listen: false).addProduct(_editedProduct);
+    Navigator.of(context).pop();
   }
 
   @override

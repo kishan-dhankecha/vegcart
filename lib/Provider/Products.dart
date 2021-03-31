@@ -42,6 +42,20 @@ class Products extends ChangeNotifier {
     return _items.firstWhere((prod) => prod.id == prodId);
   }
 
+  void addProduct(Product product) {
+    final newProduct = Product(
+      blurHash: 'ULO|2|of?^of%MWBRPofy?M{IAt7MxxuozRj',
+      title: product.title,
+      description: product.description,
+      price: product.price,
+      imgUrl: product.imgUrl,
+      id: DateTime.now().toIso8601String(),
+      rating: 4.0,
+    );
+    _items.insert(0, newProduct);
+    notifyListeners();
+  }
+
   List<Product> _items = <Product>[
     Product(
       id: "006",
