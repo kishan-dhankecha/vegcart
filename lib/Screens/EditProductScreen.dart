@@ -15,6 +15,15 @@ class _EditProductScreenState extends State<EditProductScreen> {
   final FocusNode _priceFocusNode = FocusNode();
   final FocusNode _descriptionFocusNode = FocusNode();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final urlPattern =
+      r"(https?|ftp)://([-A-Z0-9.]+)(/[-A-Z0-9+&@#/%=~_|!:,.;]*)?(\?[A-Z0-9+&@#/%=~_|!:‌​,.;]*)?";
+  final testData = {
+    'title': 'Test Product',
+    'price': '52.45',
+    'description': 'This is at least 10 characters long Description.',
+    'imgUrl':
+        'https://weilcollegeadvising.com/wp-content/uploads/test-intelligenza-sociale.jpg',
+  };
   var _editedProduct = Product(
     id: null,
     title: '',
@@ -67,7 +76,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
           children: [
             TextFormField(
               textInputAction: TextInputAction.next,
-              initialValue: kDebugMode ? 'Test Product' : null,
+              initialValue: kDebugMode ? testData['title'] : null,
               decoration: InputDecoration(
                 labelText: 'Title',
               ),
@@ -90,7 +99,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
             ),
             TextFormField(
                 focusNode: _priceFocusNode,
-                initialValue: kDebugMode ? '123.321' : null,
+                initialValue: kDebugMode ? testData['price'] : null,
                 textInputAction: TextInputAction.next,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
@@ -120,9 +129,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                 }),
             TextFormField(
               maxLines: 3,
-              initialValue: kDebugMode
-                  ? 'This is at least 10 characters long Description.'
-                  : null,
+              initialValue: kDebugMode ? testData['description'] : null,
               focusNode: _descriptionFocusNode,
               keyboardType: TextInputType.multiline,
               decoration: InputDecoration(
@@ -146,16 +153,12 @@ class _EditProductScreenState extends State<EditProductScreen> {
             ),
             TextFormField(
               keyboardType: TextInputType.url,
-              initialValue: kDebugMode
-                  ? 'https://weilcollegeadvising.com/wp-content/uploads/test-intelligenza-sociale.jpg'
-                  : null,
+              initialValue: kDebugMode ? testData['imgUrl'] : null,
               decoration: InputDecoration(
                 labelText: 'Image Url',
               ),
               validator: (value) {
                 if (value.isEmpty) return 'Please enter Image Url!';
-                var urlPattern =
-                    r"(https?|ftp)://([-A-Z0-9.]+)(/[-A-Z0-9+&@#/%=~_|!:,.;]*)?(\?[A-Z0-9+&@#/%=~_|!:‌​,.;]*)?";
                 var result = new RegExp(urlPattern, caseSensitive: false)
                     .firstMatch(value);
                 if (result == null) return 'Please enter valid Image Url!';
