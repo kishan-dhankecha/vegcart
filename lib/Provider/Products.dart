@@ -19,10 +19,14 @@ class Product with ChangeNotifier {
   @override
   String toString() {
     return {
+      "id": id,
       "title": title,
       "imgUrl": imgUrl,
+      "blurHash": blurHash,
       "description": description,
-      "price": price
+      "price": price,
+      "rating": rating,
+      "isFavorite": isFavorite
     }.toString();
   }
 
@@ -53,6 +57,21 @@ class Products extends ChangeNotifier {
       rating: 4.0,
     );
     _items.insert(0, newProduct);
+    notifyListeners();
+  }
+
+  void updateProduct(String id, Product newProduct) {
+    final prodIndex = _items.indexWhere((prod) => prod.id == id);
+    if (prodIndex >= 0) {
+      _items[prodIndex] = newProduct;
+      notifyListeners();
+    } else {
+      print('Error while Updating Product due to Index of the Product.');
+    }
+  }
+
+  void deleteProduct(String id) {
+    _items.removeWhere((prod) => prod.id == id);
     notifyListeners();
   }
 

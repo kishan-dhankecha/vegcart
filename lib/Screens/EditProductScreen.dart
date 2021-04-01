@@ -15,9 +15,10 @@ class _EditProductScreenState extends State<EditProductScreen> {
   final FocusNode _priceFocusNode = FocusNode();
   final FocusNode _descriptionFocusNode = FocusNode();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  var _isPageLoadedFirstTime = true;
   final urlPattern =
       r"(https?|ftp)://([-A-Z0-9.]+)(/[-A-Z0-9+&@#/%=~_|!:,.;]*)?(\?[A-Z0-9+&@#/%=~_|!:‌​,.;]*)?";
-  final testData = {
+  var testData = {
     'title': 'Test Product',
     'price': '52.45',
     'description': 'This is at least 10 characters long Description.',
@@ -35,6 +36,25 @@ class _EditProductScreenState extends State<EditProductScreen> {
   );
 
   @override
+  void didChangeDependencies() {
+    if (_isPageLoadedFirstTime) {
+      final productId = ModalRoute.of(context).settings.arguments as String;
+      if (productId != null) {
+        _editedProduct =
+            Provider.of<Products>(context, listen: false).findById(productId);
+        testData = {
+          'title': _editedProduct.title,
+          'price': '${_editedProduct.price}',
+          'description': _editedProduct.description,
+          'imgUrl': _editedProduct.imgUrl,
+        };
+      }
+    }
+    _isPageLoadedFirstTime = false;
+    super.didChangeDependencies();
+  }
+
+  @override
   void dispose() {
     _priceFocusNode.dispose();
     _descriptionFocusNode.dispose();
@@ -47,7 +67,12 @@ class _EditProductScreenState extends State<EditProductScreen> {
       return;
     }
     _formKey.currentState.save();
-    Provider.of<Products>(context, listen: false).addProduct(_editedProduct);
+    if (_editedProduct.id == null) {
+      Provider.of<Products>(context, listen: false).addProduct(_editedProduct);
+    } else {
+      Provider.of<Products>(context, listen: false)
+          .updateProduct(_editedProduct.id, _editedProduct);
+    }
     Navigator.of(context).pop();
   }
 
@@ -95,6 +120,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                 description: _editedProduct.description,
                 rating: _editedProduct.rating,
                 price: _editedProduct.price,
+                isFavorite: _editedProduct.isFavorite,
               ),
             ),
             TextFormField(
@@ -124,6 +150,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                     blurHash: _editedProduct.blurHash,
                     description: _editedProduct.description,
                     rating: _editedProduct.rating,
+                    isFavorite: _editedProduct.isFavorite,
                     price: double.parse(newValue),
                   );
                 }),
@@ -148,6 +175,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                 blurHash: _editedProduct.blurHash,
                 description: newValue,
                 rating: _editedProduct.rating,
+                isFavorite: _editedProduct.isFavorite,
                 price: _editedProduct.price,
               ),
             ),
@@ -172,6 +200,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                 blurHash: _editedProduct.blurHash,
                 description: _editedProduct.description,
                 rating: _editedProduct.rating,
+                isFavorite: _editedProduct.isFavorite,
                 price: _editedProduct.price,
               ),
             ),
