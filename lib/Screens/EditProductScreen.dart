@@ -16,6 +16,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
   final FocusNode _descriptionFocusNode = FocusNode();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   var _isPageLoadedFirstTime = true;
+  String appBarTitle = 'Add';
   final urlPattern =
       r"(https?|ftp)://([-A-Z0-9.]+)(/[-A-Z0-9+&@#/%=~_|!:,.;]*)?(\?[A-Z0-9+&@#/%=~_|!:‌​,.;]*)?";
   var testData = {
@@ -50,6 +51,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
           'description': _editedProduct.description,
           'imgUrl': _editedProduct.imgUrl,
         };
+        appBarTitle = 'Edit';
       }
     }
     _isPageLoadedFirstTime = false;
@@ -82,8 +84,8 @@ class _EditProductScreenState extends State<EditProductScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const AppLogoName(
-          firstName: 'Add',
+        title: AppLogoName(
+          firstName: appBarTitle,
           lastName: 'Product',
         ),
         actions: [
