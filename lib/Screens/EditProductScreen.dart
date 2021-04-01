@@ -19,11 +19,13 @@ class _EditProductScreenState extends State<EditProductScreen> {
   final urlPattern =
       r"(https?|ftp)://([-A-Z0-9.]+)(/[-A-Z0-9+&@#/%=~_|!:,.;]*)?(\?[A-Z0-9+&@#/%=~_|!:‌​,.;]*)?";
   var testData = {
-    'title': 'Test Product',
-    'price': '52.45',
-    'description': 'This is at least 10 characters long Description.',
-    'imgUrl':
-        'https://weilcollegeadvising.com/wp-content/uploads/test-intelligenza-sociale.jpg',
+    'title': kDebugMode ? 'Test Product' : '',
+    'price': kDebugMode ? '52.45' : '',
+    'description':
+        kDebugMode ? 'This is at least 10 characters long Description.' : '',
+    'imgUrl': kDebugMode
+        ? 'https://weilcollegeadvising.com/wp-content/uploads/test-intelligenza-sociale.jpg'
+        : '',
   };
   var _editedProduct = Product(
     id: null,
@@ -101,7 +103,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
           children: [
             TextFormField(
               textInputAction: TextInputAction.next,
-              initialValue: kDebugMode ? testData['title'] : null,
+              initialValue: testData['title'],
               decoration: InputDecoration(
                 labelText: 'Title',
               ),
@@ -125,7 +127,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
             ),
             TextFormField(
                 focusNode: _priceFocusNode,
-                initialValue: kDebugMode ? testData['price'] : null,
+                initialValue: testData['price'],
                 textInputAction: TextInputAction.next,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
@@ -156,7 +158,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                 }),
             TextFormField(
               maxLines: 3,
-              initialValue: kDebugMode ? testData['description'] : null,
+              initialValue: testData['description'],
               focusNode: _descriptionFocusNode,
               keyboardType: TextInputType.multiline,
               decoration: InputDecoration(
@@ -181,7 +183,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
             ),
             TextFormField(
               keyboardType: TextInputType.url,
-              initialValue: kDebugMode ? testData['imgUrl'] : null,
+              initialValue: testData['imgUrl'],
               decoration: InputDecoration(
                 labelText: 'Image Url',
               ),
