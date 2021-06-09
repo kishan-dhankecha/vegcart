@@ -1,4 +1,4 @@
-<img src="https://github.com/Kishan-Dhankecha/vegcart/blob/prod/VegApp-Banner.png" alt="Logo" width=100%>
+<img src="https://github.com/Kishan-Dhankecha/vegcart/blob/dev/VegApp-Banner.png" alt="Logo" width=100%>
 
 <p align="center">
  <h3 align="center">VegCart App</h3>
