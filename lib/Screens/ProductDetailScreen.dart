@@ -23,10 +23,7 @@ class ProductDetailScreen extends StatelessWidget {
               bottomLeft: Radius.circular(30),
               bottomRight: Radius.circular(30),
             ),
-            child: BlurInImage(
-              product.imgUrl,
-              blurHash: product.blurHash,
-            ),
+            child: BlurInImage(product.imgUrl),
           ),
           Padding(
             padding: const EdgeInsets.all(12.0),

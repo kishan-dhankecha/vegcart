@@ -27,10 +27,7 @@ class ProductItem extends StatelessWidget {
             child: Container(
               height: (160.00),
               width: double.infinity,
-              child: BlurInImage(
-                product.imgUrl,
-                blurHash: product.blurHash,
-              ),
+              child: BlurInImage(product.imgUrl),
             ),
           ),
           Divider(

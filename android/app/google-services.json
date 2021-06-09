@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "274041346634",
+    "firebase_url": "https://vegcart-0426-default-rtdb.firebaseio.com",
+    "project_id": "vegcart-0426",
+    "storage_bucket": "vegcart-0426.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:274041346634:android:2c2cfdb8f190d03a1564b3",
+        "android_client_info": {
+          "package_name": "com.example.vegcart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "274041346634-n2iq62hoimnov6d73qh51ev5b36im66o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4qrfeTv5-pW2sIZ78cpYNy5gKghtqp6E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "274041346634-n2iq62hoimnov6d73qh51ev5b36im66o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
