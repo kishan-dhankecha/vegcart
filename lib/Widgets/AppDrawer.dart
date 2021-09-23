@@ -15,41 +15,16 @@ class AppDrawer extends StatelessWidget {
             AppBar(
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const AppLogoName(),
-                  Text(
-                    'v1.0.0',
-                    style: Theme.of(context).textTheme.bodyText1,
-                  ),
-                ],
+                children: [const AppLogoName(), Text('v1.0.0', style: Theme.of(context).textTheme.bodyText1)],
               ),
               automaticallyImplyLeading: false,
             ),
             Divider(),
-            ListTile(
-              leading: Icon(Icons.shop),
-              title: Text('Shop'),
-              onTap: () {
-                Navigator.pushReplacementNamed(context, '/');
-              },
-            ),
+            ListTile(leading: Icon(Icons.shop), title: Text('Shop'), onTap: () => Navigator.pushReplacementNamed(context, '/')),
             Divider(),
-            ListTile(
-              leading: Icon(Icons.payment),
-              title: Text('Orders'),
-              onTap: () {
-                Navigator.pushReplacementNamed(context, OrdersScreen.routeName);
-              },
-            ),
+            ListTile(leading: Icon(Icons.payment), title: Text('Orders'), onTap: () => Navigator.pushReplacementNamed(context, OrdersScreen.routeName)),
             Divider(),
-            ListTile(
-              leading: Icon(Icons.edit),
-              title: Text('Manage Products'),
-              onTap: () {
-                Navigator.pushReplacementNamed(
-                    context, UserProductsScreen.routeName);
-              },
-            ),
+            ListTile(leading: Icon(Icons.edit), title: Text('Manage Products'), onTap: () => Navigator.pushReplacementNamed(context, UserProductsScreen.routeName)),
           ],
         ),
       ),

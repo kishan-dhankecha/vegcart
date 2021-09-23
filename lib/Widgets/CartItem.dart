@@ -9,8 +9,7 @@ class CartItem extends StatelessWidget {
   final int quantity;
   final String title;
 
-  const CartItem(
-      {this.id, this.productId, this.price, this.quantity, this.title});
+  const CartItem({this.id, this.productId, this.price, this.quantity, this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -24,35 +23,19 @@ class CartItem extends StatelessWidget {
             title: const Text('Are you sure?'),
             content: Text('You are going to remove all $title from cart.'),
             actions: [
-              ElevatedButton(
-                child: const Text('No'),
-                onPressed: () {
-                  Navigator.of(ctx).pop(false);
-                },
-              ),
-              ElevatedButton(
-                child: const Text('Yes'),
-                onPressed: () {
-                  Navigator.of(ctx).pop(true);
-                },
-              ),
+              ElevatedButton(child: const Text('No'), onPressed: () => Navigator.of(ctx).pop(false)),
+              ElevatedButton(child: const Text('Yes'), onPressed: () => Navigator.of(ctx).pop(true)),
             ],
           ),
         );
       },
-      onDismissed: (_) {
-        Provider.of<Cart>(context, listen: false).removeAllItem(productId);
-      },
+      onDismissed: (_) => Provider.of<Cart>(context, listen: false).removeAllItem(productId),
       background: Container(
         color: Theme.of(context).errorColor,
         padding: const EdgeInsets.symmetric(horizontal: 15),
         alignment: Alignment.centerRight,
         margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 4),
-        child: const Icon(
-          Icons.remove_shopping_cart,
-          color: Colors.white,
-          size: 30,
-        ),
+        child: const Icon(Icons.remove_shopping_cart, color: Colors.white, size: 30),
       ),
       child: Card(
         margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 4),
@@ -62,28 +45,14 @@ class CartItem extends StatelessWidget {
             leading: CircleAvatar(
               child: Padding(
                 padding: const EdgeInsets.all(5.0),
-                child: FittedBox(
-                  child: Text(
-                    '₹${price.toStringAsFixed(2)}',
-                    style: Theme.of(context).textTheme.bodyText1,
-                  ),
-                ),
+                child: FittedBox(child: Text('₹${price.toStringAsFixed(2)}', style: Theme.of(context).textTheme.bodyText1)),
               ),
               backgroundColor: Theme.of(context).primaryColor,
               radius: 25.0,
             ),
-            title: Text(
-              title,
-              style: Theme.of(context).textTheme.headline6,
-            ),
-            subtitle: Text(
-              'Total: ₹${(quantity * price).toStringAsFixed(2)}',
-              style: Theme.of(context).textTheme.bodyText1,
-            ),
-            trailing: Text(
-              '${quantity}x',
-              style: Theme.of(context).textTheme.bodyText1,
-            ),
+            title: Text(title, style: Theme.of(context).textTheme.headline6),
+            subtitle: Text('Total: ₹${(quantity * price).toStringAsFixed(2)}', style: Theme.of(context).textTheme.bodyText1),
+            trailing: Text('${quantity}x', style: Theme.of(context).textTheme.bodyText1),
           ),
         ),
       ),

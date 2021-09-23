@@ -9,20 +9,12 @@ ThemeData lightThemeData(BuildContext context) {
     appBarTheme: Theme.of(context).appBarTheme.copyWith(
           backgroundColor: kContentColorDarkTheme,
           iconTheme: IconThemeData(color: kContentColorLightTheme),
-          textTheme: Theme.of(context).textTheme.apply(
-                bodyColor: kContentColorLightTheme,
-              ),
+          textTheme: Theme.of(context).textTheme.apply(bodyColor: kContentColorLightTheme),
           centerTitle: true,
         ),
     iconTheme: IconThemeData(color: kContentColorLightTheme),
-    textTheme: Theme.of(context).textTheme.apply(
-          fontFamily: 'Vidaloka',
-          bodyColor: kContentColorLightTheme,
-        ),
-    colorScheme: ColorScheme.light(
-      primary: kPrimaryColor,
-      secondary: kSecondaryColor,
-    ),
+    textTheme: Theme.of(context).textTheme.apply(fontFamily: 'Vidaloka', bodyColor: kContentColorLightTheme),
+    colorScheme: ColorScheme.light(primary: kPrimaryColor, secondary: kSecondaryColor),
     cardColor: kContentColorDarkTheme,
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: Colors.white,
@@ -41,20 +33,12 @@ ThemeData darkThemeData(BuildContext context) {
     appBarTheme: Theme.of(context).appBarTheme.copyWith(
           backgroundColor: kContentColorLightTheme,
           iconTheme: IconThemeData(color: kContentColorDarkTheme),
-          textTheme: Theme.of(context).textTheme.apply(
-                bodyColor: kContentColorDarkTheme,
-              ),
+          textTheme: Theme.of(context).textTheme.apply(bodyColor: kContentColorDarkTheme),
           centerTitle: true,
         ),
     iconTheme: IconThemeData(color: kContentColorDarkTheme),
-    textTheme: Theme.of(context).textTheme.apply(
-          fontFamily: 'Vidaloka',
-          bodyColor: kContentColorDarkTheme,
-        ),
-    colorScheme: ColorScheme.dark().copyWith(
-      primary: kPrimaryColor,
-      secondary: kSecondaryColor,
-    ),
+    textTheme: Theme.of(context).textTheme.apply(fontFamily: 'Vidaloka', bodyColor: kContentColorDarkTheme),
+    colorScheme: ColorScheme.dark().copyWith(primary: kPrimaryColor, secondary: kSecondaryColor),
     cardColor: Color(0xFF00112b),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: kContentColorLightTheme,

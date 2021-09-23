@@ -13,18 +13,10 @@ class ProductDetailScreen extends StatelessWidget {
     final productData = Provider.of<Products>(context, listen: false);
     Product product = productData.findById(productId);
     return Scaffold(
-      appBar: AppBar(
-        title: Text('${product.title}'),
-      ),
+      appBar: AppBar(title: Text('${product.title}')),
       body: ListView(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(30),
-              bottomRight: Radius.circular(30),
-            ),
-            child: BlurInImage(product.imgUrl),
-          ),
+          ClipRRect(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30), bottomRight: Radius.circular(30)), child: BlurInImage(product.imgUrl)),
           Padding(
             padding: const EdgeInsets.all(12.0),
             child: Container(
@@ -32,14 +24,7 @@ class ProductDetailScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Expanded(
-                    child: Text(
-                      '${product.title}',
-                      style: Theme.of(context).textTheme.headline5.copyWith(
-                            fontSize: 30,
-                          ),
-                    ),
-                  ),
+                  Expanded(child: Text('${product.title}', style: Theme.of(context).textTheme.headline5.copyWith(fontSize: 30))),
                   StarRating(rating: product.rating),
                 ],
               ),
@@ -48,21 +33,11 @@ class ProductDetailScreen extends StatelessWidget {
           Divider(),
           Padding(
             padding: const EdgeInsets.all(12.0),
-            child: Text(
-              'Description:',
-              style: Theme.of(context).textTheme.headline6.copyWith(
-                    color: Colors.grey,
-                  ),
-            ),
+            child: Text('Description:', style: Theme.of(context).textTheme.headline6.copyWith(color: Colors.grey)),
           ),
           Padding(
             padding: const EdgeInsets.all(12.0),
-            child: Text(
-              '${product.description}',
-              style: Theme.of(context).textTheme.bodyText1.copyWith(
-                    letterSpacing: 1.3,
-                  ),
-            ),
+            child: Text('${product.description}', style: Theme.of(context).textTheme.bodyText1.copyWith(letterSpacing: 1.3)),
           ),
         ],
       ),

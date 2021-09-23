@@ -17,39 +17,22 @@ class _EditProductScreenState extends State<EditProductScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   var _isPageLoadedFirstTime = true;
   String appBarTitle = 'Add';
-  final urlPattern =
-      r"(https?|ftp)://([-A-Z0-9.]+)(/[-A-Z0-9+&@#/%=~_|!:,.;]*)?(\?[A-Z0-9+&@#/%=~_|!:‌​,.;]*)?";
+  final urlPattern = r"(https?|ftp)://([-A-Z0-9.]+)(/[-A-Z0-9+&@#/%=~_|!:,.;]*)?(\?[A-Z0-9+&@#/%=~_|!:‌​,.;]*)?";
   var testData = {
     'title': kDebugMode ? 'Test Product' : '',
     'price': kDebugMode ? '52.45' : '',
-    'description':
-        kDebugMode ? 'This is at least 10 characters long Description.' : '',
-    'imgUrl': kDebugMode
-        ? 'https://weilcollegeadvising.com/wp-content/uploads/test-intelligenza-sociale.jpg'
-        : '',
+    'description': kDebugMode ? 'This is at least 10 characters long Description.' : '',
+    'imgUrl': kDebugMode ? 'https://weilcollegeadvising.com/wp-content/uploads/test-intelligenza-sociale.jpg' : '',
   };
-  var _editedProduct = Product(
-    id: null,
-    title: '',
-    imgUrl: '',
-    description: '',
-    rating: 4,
-    price: 0.0,
-  );
+  var _editedProduct = Product(id: null, title: '', imgUrl: '', description: '', rating: 4, price: 0.0);
 
   @override
   void didChangeDependencies() {
     if (_isPageLoadedFirstTime) {
       final productId = ModalRoute.of(context).settings.arguments as String;
       if (productId != null) {
-        _editedProduct =
-            Provider.of<Products>(context, listen: false).findById(productId);
-        testData = {
-          'title': _editedProduct.title,
-          'price': '${_editedProduct.price}',
-          'description': _editedProduct.description,
-          'imgUrl': _editedProduct.imgUrl,
-        };
+        _editedProduct = Provider.of<Products>(context, listen: false).findById(productId);
+        testData = {'title': _editedProduct.title, 'price': '${_editedProduct.price}', 'description': _editedProduct.description, 'imgUrl': _editedProduct.imgUrl};
         appBarTitle = 'Edit';
       }
     }
@@ -70,12 +53,11 @@ class _EditProductScreenState extends State<EditProductScreen> {
       return;
     }
     _formKey.currentState.save();
-    if (_editedProduct.id == null) {
+    if (_editedProduct.id == null)
       Provider.of<Products>(context, listen: false).addProduct(_editedProduct);
-    } else {
-      Provider.of<Products>(context, listen: false)
-          .updateProduct(_editedProduct.id, _editedProduct);
-    }
+    else
+      Provider.of<Products>(context, listen: false).updateProduct(_editedProduct.id, _editedProduct);
+
     Navigator.of(context).pop();
   }
 
@@ -83,19 +65,8 @@ class _EditProductScreenState extends State<EditProductScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: AppLogoName(
-          firstName: appBarTitle,
-          lastName: 'Product',
-        ),
-        actions: [
-          TextButton(
-            child: Text(
-              'Save',
-              style: Theme.of(context).textTheme.bodyText1,
-            ),
-            onPressed: _saveForm,
-          ),
-        ],
+        title: AppLogoName(firstName: appBarTitle, lastName: 'Product'),
+        actions: [TextButton(child: Text('Save', style: Theme.of(context).textTheme.bodyText1), onPressed: _saveForm)],
       ),
       body: Form(
         key: _formKey,
@@ -105,16 +76,9 @@ class _EditProductScreenState extends State<EditProductScreen> {
             TextFormField(
               textInputAction: TextInputAction.next,
               initialValue: testData['title'],
-              decoration: InputDecoration(
-                labelText: 'Title',
-              ),
-              validator: (value) {
-                if (value.isEmpty) return 'Please enter title!';
-                return null;
-              },
-              onFieldSubmitted: (_) {
-                FocusScope.of(context).requestFocus(_priceFocusNode);
-              },
+              decoration: InputDecoration(labelText: 'Title'),
+              validator: (value) => value.isEmpty ? 'Please enter title!' : null,
+              onFieldSubmitted: (_) => FocusScope.of(context).requestFocus(_priceFocusNode),
               onSaved: (newValue) => _editedProduct = Product(
                 id: _editedProduct.id,
                 title: newValue,
@@ -130,20 +94,14 @@ class _EditProductScreenState extends State<EditProductScreen> {
                 initialValue: testData['price'],
                 textInputAction: TextInputAction.next,
                 keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                  labelText: 'Price',
-                ),
+                decoration: InputDecoration(labelText: 'Price'),
                 validator: (value) {
                   if (value.isEmpty) return 'Please enter price!';
-                  if (double.tryParse(value) == null)
-                    return 'Please enter valid number!';
-                  if (double.parse(value) <= 0)
-                    return 'Please enter number greater than zero!';
+                  if (double.tryParse(value) == null) return 'Please enter valid number!';
+                  if (double.parse(value) <= 0) return 'Please enter number greater than zero!';
                   return null;
                 },
-                onFieldSubmitted: (_) {
-                  FocusScope.of(context).requestFocus(_descriptionFocusNode);
-                },
+                onFieldSubmitted: (_) => FocusScope.of(context).requestFocus(_descriptionFocusNode),
                 onSaved: (newValue) {
                   _editedProduct = Product(
                     id: _editedProduct.id,
@@ -160,13 +118,10 @@ class _EditProductScreenState extends State<EditProductScreen> {
               initialValue: testData['description'],
               focusNode: _descriptionFocusNode,
               keyboardType: TextInputType.multiline,
-              decoration: InputDecoration(
-                labelText: 'Description',
-              ),
+              decoration: InputDecoration(labelText: 'Description'),
               validator: (value) {
                 if (value.isEmpty) return 'Please enter Description!';
-                if (value.length < 10)
-                  return 'Should be at least 10 characters long!';
+                if (value.length < 10) return 'Should be at least 10 characters long!';
                 return null;
               },
               onSaved: (newValue) => _editedProduct = Product(
@@ -182,13 +137,10 @@ class _EditProductScreenState extends State<EditProductScreen> {
             TextFormField(
               keyboardType: TextInputType.url,
               initialValue: testData['imgUrl'],
-              decoration: InputDecoration(
-                labelText: 'Image Url',
-              ),
+              decoration: InputDecoration(labelText: 'Image Url'),
               validator: (value) {
                 if (value.isEmpty) return 'Please enter Image Url!';
-                var result = new RegExp(urlPattern, caseSensitive: false)
-                    .firstMatch(value);
+                var result = new RegExp(urlPattern, caseSensitive: false).firstMatch(value);
                 if (result == null) return 'Please enter valid Image Url!';
                 return null;
               },

@@ -22,22 +22,9 @@ class _OrderItemState extends State<OrderItem> {
       child: Column(
         children: [
           ListTile(
-            title: Text(
-              '₹${widget.order.amount.toStringAsFixed(2)}',
-              style: Theme.of(context).textTheme.headline5,
-            ),
-            subtitle: Text(
-              DateFormat('dd-MM-yyy').format(widget.order.dateTime),
-              style: Theme.of(context).textTheme.subtitle1,
-            ),
-            trailing: IconButton(
-              icon: Icon(_expanded ? Icons.expand_less : Icons.expand_more),
-              onPressed: () {
-                setState(() {
-                  _expanded = !_expanded;
-                });
-              },
-            ),
+            title: Text('₹${widget.order.amount.toStringAsFixed(2)}', style: Theme.of(context).textTheme.headline5),
+            subtitle: Text(DateFormat('dd-MM-yyy').format(widget.order.dateTime), style: Theme.of(context).textTheme.subtitle1),
+            trailing: IconButton(icon: Icon(_expanded ? Icons.expand_less : Icons.expand_more), onPressed: () => setState(() => _expanded = !_expanded)),
           ),
           Visibility(
             visible: _expanded,
@@ -46,29 +33,17 @@ class _OrderItemState extends State<OrderItem> {
                 Divider(),
                 DataTable(
                   columns: const [
-                    DataColumn(
-                      label: Text('Product'),
-                    ),
-                    DataColumn(
-                      label: Text('Quantity'),
-                    ),
-                    DataColumn(
-                      label: Text('Price'),
-                    ),
+                    DataColumn(label: Text('Product')),
+                    DataColumn(label: Text('Quantity')),
+                    DataColumn(label: Text('Price')),
                   ],
                   rows: widget.order.products
                       .map(
                         (prod) => DataRow(
                           cells: [
-                            DataCell(
-                              Text('${prod.title}'),
-                            ),
-                            DataCell(
-                              Text('${prod.quantity}'),
-                            ),
-                            DataCell(
-                              Text('₹${prod.price.toStringAsFixed(2)}'),
-                            ),
+                            DataCell(Text('${prod.title}')),
+                            DataCell(Text('${prod.quantity}')),
+                            DataCell(Text('₹${prod.price.toStringAsFixed(2)}')),
                           ],
                         ),
                       )

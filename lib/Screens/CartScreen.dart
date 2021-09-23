@@ -13,20 +13,9 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final cart = Provider.of<Cart>(context);
     return Scaffold(
-      appBar: AppBar(
-        title: const AppLogoName(
-          firstName: 'Your',
-          lastName: 'Cart',
-        ),
-      ),
+      appBar: AppBar(title: const AppLogoName(firstName: 'Your', lastName: 'Cart')),
       body: cart.itemCount == 0
-          ? Center(
-              child: Text(
-                'Your cart is Empty\nTry adding some.',
-                style: Theme.of(context).textTheme.headline6,
-                textAlign: TextAlign.center,
-              ),
-            )
+          ? Center(child: Text('Your cart is Empty\nTry adding some.', style: Theme.of(context).textTheme.headline6, textAlign: TextAlign.center))
           : Column(
               children: [
                 Card(
@@ -35,25 +24,12 @@ class CartScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(12),
                     child: Row(
                       children: [
-                        Text(
-                          'Total:',
-                          style: Theme.of(context).textTheme.bodyText1,
-                        ),
+                        Text('Total:', style: Theme.of(context).textTheme.bodyText1),
                         const Spacer(),
-                        Chip(
-                          label: Text(
-                            '₹${cart.totalAmount.toStringAsFixed(2)}',
-                            style: Theme.of(context).textTheme.bodyText1,
-                          ),
-                          backgroundColor: Theme.of(context).primaryColor,
-                        ),
+                        Chip(label: Text('₹${cart.totalAmount.toStringAsFixed(2)}', style: Theme.of(context).textTheme.bodyText1), backgroundColor: Theme.of(context).primaryColor),
                         TextButton(
                           onPressed: () {
-                            Provider.of<Orders>(context, listen: false)
-                                .addOrder(
-                              cart.items.values.toList(),
-                              cart.totalAmount,
-                            );
+                            Provider.of<Orders>(context, listen: false).addOrder(cart.items.values.toList(), cart.totalAmount);
                             cart.clear();
                           },
                           child: const Text('Order now'),

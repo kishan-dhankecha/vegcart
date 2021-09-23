@@ -14,21 +14,8 @@ class UserProductsScreen extends StatelessWidget {
     final productsData = Provider.of<Products>(context);
     return Scaffold(
       appBar: AppBar(
-        title: const AppLogoName(
-          firstName: 'Your',
-          lastName: 'Products',
-        ),
-        actions: [
-          TextButton(
-            child: Text(
-              'Add',
-              style: Theme.of(context).textTheme.bodyText1,
-            ),
-            onPressed: () {
-              Navigator.pushNamed(context, EditProductScreen.routeName);
-            },
-          ),
-        ],
+        title: const AppLogoName(firstName: 'Your', lastName: 'Products'),
+        actions: [TextButton(child: Text('Add', style: Theme.of(context).textTheme.bodyText1), onPressed: () => Navigator.pushNamed(context, EditProductScreen.routeName))],
       ),
       drawer: AppDrawer(),
       body: Padding(
@@ -36,11 +23,7 @@ class UserProductsScreen extends StatelessWidget {
         child: ListView.builder(
           itemBuilder: (_, index) => Column(
             children: [
-              UserProductItem(
-                productsData.items[index].id,
-                productsData.items[index].title,
-                productsData.items[index].imgUrl,
-              ),
+              UserProductItem(productsData.items[index].id, productsData.items[index].title, productsData.items[index].imgUrl),
               Divider(),
             ],
           ),

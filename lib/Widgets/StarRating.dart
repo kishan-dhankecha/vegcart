@@ -22,14 +22,7 @@ class StarRating extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: List.generate(
-        starCount ?? 5,
-        (index) => Icon(
-          getIcon(index),
-          size: size ?? 16,
-          color: Theme.of(context).colorScheme.secondary,
-        ),
-      ),
+      children: List.generate(starCount ?? 5, (index) => Icon(getIcon(index), size: size ?? 16, color: Theme.of(context).colorScheme.secondary)),
     );
   }
 }

@@ -20,20 +20,10 @@ class ProductItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(context, ProductDetailScreen.routeName,
-                  arguments: product.id);
-            },
-            child: Container(
-              height: (160.00),
-              width: double.infinity,
-              child: BlurInImage(product.imgUrl),
-            ),
+            onTap: () => Navigator.pushNamed(context, ProductDetailScreen.routeName, arguments: product.id),
+            child: Container(height: (160.00), width: double.infinity, child: BlurInImage(product.imgUrl)),
           ),
-          Divider(
-            thickness: 2,
-            height: 2,
-          ),
+          Divider(thickness: 2, height: 2),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
@@ -41,54 +31,30 @@ class ProductItem extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Expanded(
-                      child: Text(
-                        product.title,
-                        style: Theme.of(context).textTheme.headline5,
-                      ),
-                    ),
-                    StarRating(
-                      rating: product.rating,
-                    ),
+                    Expanded(child: Text(product.title, style: Theme.of(context).textTheme.headline5)),
+                    StarRating(rating: product.rating),
                   ],
                 ),
-                SizedBox(
-                  height: 15,
-                ),
+                SizedBox(height: 15),
                 Row(
                   children: [
                     RichText(
                       text: TextSpan(
                         text: '₹${product.price.toStringAsFixed(2)}',
                         style: Theme.of(context).textTheme.headline6,
-                        children: [
-                          TextSpan(
-                            text: '/kg.',
-                            style: Theme.of(context).textTheme.bodyText1,
-                          ),
-                        ],
+                        children: [TextSpan(text: '/kg.', style: Theme.of(context).textTheme.bodyText1)],
                       ),
                     ),
                     Spacer(),
                     Consumer<Product>(
                       builder: (_, product, __) => IconButton(
-                        icon: Icon(
-                          product.isFavorite
-                              ? Icons.favorite
-                              : Icons.favorite_border,
-                        ),
-                        onPressed: () {
-                          product.toggleFavorite();
-                        },
+                        icon: Icon(product.isFavorite ? Icons.favorite : Icons.favorite_border),
+                        onPressed: () => product.toggleFavorite(),
                       ),
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        cart.addItem(
-                          title: product.title,
-                          productId: product.id,
-                          price: product.price,
-                        );
+                        cart.addItem(title: product.title, productId: product.id, price: product.price);
                         ScaffoldMessenger.of(context).hideCurrentSnackBar();
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
@@ -96,11 +62,8 @@ class ProductItem extends StatelessWidget {
                             duration: Duration(seconds: 2),
                             action: SnackBarAction(
                               label: 'UNDO',
-                              textColor:
-                                  Theme.of(context).colorScheme.secondary,
-                              onPressed: () {
-                                cart.removeSingleItem(product.id);
-                              },
+                              textColor: Theme.of(context).colorScheme.secondary,
+                              onPressed: () => cart.removeSingleItem(product.id),
                             ),
                           ),
                         );

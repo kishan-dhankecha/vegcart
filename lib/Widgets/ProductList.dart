@@ -15,22 +15,13 @@ class ProductList extends StatelessWidget {
     final products = showFavs ? productsData.favorites : productsData.items;
     if (showFavs && products.length == 0)
       return Center(
-        child: Text(
-          'No Favorites available\nTry adding some.',
-          style: Theme.of(context).textTheme.headline6,
-          textAlign: TextAlign.center,
-        ),
+        child: Text('No Favorites available\nTry adding some.', style: Theme.of(context).textTheme.headline6, textAlign: TextAlign.center),
       );
     return ListView.builder(
       padding: const EdgeInsets.all(15),
       physics: BouncingScrollPhysics(),
       itemCount: products.length,
-      itemBuilder: (ctx, i) {
-        return ChangeNotifierProvider<Product>.value(
-          value: products[i],
-          child: ProductItem(),
-        );
-      },
+      itemBuilder: (ctx, i) => ChangeNotifierProvider<Product>.value(value: products[i], child: ProductItem()),
     );
   }
 }

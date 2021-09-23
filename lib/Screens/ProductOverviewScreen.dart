@@ -38,30 +38,13 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
               });
             },
             itemBuilder: (_) => [
-              PopupMenuItem(
-                child: Text('Show all'),
-                value: Filter.All,
-              ),
-              PopupMenuItem(
-                child: Text('Only favorites'),
-                value: Filter.Fav,
-              ),
+              PopupMenuItem(child: Text('Show all'), value: Filter.All),
+              PopupMenuItem(child: Text('Only favorites'), value: Filter.Fav),
             ],
           ),
           Consumer<Cart>(
-            builder: (_, cart, Widget child) {
-              return Badge(
-                child: child,
-                value: '${cart.itemCount}',
-              );
-            },
-            child: IconButton(
-              icon: const Icon(Icons.shopping_cart_outlined),
-              tooltip: 'Cart',
-              onPressed: () {
-                Navigator.pushNamed(context, CartScreen.routeName);
-              },
-            ),
+            builder: (_, cart, Widget child) => Badge(child: child, value: '${cart.itemCount}'),
+            child: IconButton(icon: const Icon(Icons.shopping_cart_outlined), tooltip: 'Cart', onPressed: () => Navigator.pushNamed(context, CartScreen.routeName)),
           )
         ],
       ),
