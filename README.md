@@ -1,18 +1,19 @@
-<img src="https://github.com/Kishan-Dhankecha/vegcart/blob/dev/VegApp-Banner.png" alt="Logo" width=100%>
+<img src="https://github.com/Kishan-Dhankecha/vegcart/blob/prod/VegApp-Banner.png" alt="Logo" width=100%>
+<h3 align="center">VegCart App</h3>
+<p align="center">Contains basic coding practices, Provider, and much more!</p>
 
-<p align="center">
- <h3 align="center">VegCart App</h3>
+[![GitHub stars](https://img.shields.io/github/stars/kishan-dhankecha/vegcart?color=brightgreen)](https://github.com/kishan-dhankecha/vegcart/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/kishan-dhankecha/vegcart)](https://github.com/kishan-dhankecha/vegcart/network/members)
+![GitHub repo size](https://img.shields.io/github/repo-size/kishan-dhankecha/vegcart)
+[![CodeFactor](https://img.shields.io/codefactor/grade/github/kishan-dhankecha/vegcart)](https://www.codefactor.io/repository/github/kishan-dhankecha/vegcart)
+[![Open Bugs](https://img.shields.io/github/issues-raw/kishan-dhankecha/vegcart/bug?label=bugs&color=orange)](https://github.com/kishan-dhankecha/vegcart/issues?q=is:issue+is:open+label:bug)
+[![Enhancement Requests](https://img.shields.io/github/issues-raw/kishan-dhankecha/vegcart/enhancement?label=enhancements)](https://github.com/kishan-dhankecha/vegcart/issues?q=is:issue+is:open+label:enhancement+)
+[![Closed Issues](https://img.shields.io/github/issues-closed-raw/kishan-dhankecha/vegcart?color=lightgrey)](https://github.com/kishan-dhankecha/vegcart/issues?q=is:issue+is:closed)
+[![Buy Me A Coffee](https://img.shields.io/badge/Donate-Buy%20Me%20A%20Coffee-yellow.svg)](https://www.buymeacoffee.com/kishandhankecha)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/kishan-dhankecha/vegcart/pulls)
+[![Contributors](https://img.shields.io/github/contributors/kishan-dhankecha/vegcart)](https://github.com/kishan-dhankecha/vegcart/graphs/contributors)
 
-  <p align="center">
-    Contains basic coding practices, Provider, and much more!
-    <br>
-    <br>
-    <a href="https://github.com/Kishan-Dhankecha/vegcart/issues/new?assignees=&labels=bug&template=bug_report.md">Report bug</a>
-    ·
-    <a href="https://github.com/Kishan-Dhankecha/vegcart/issues/new?assignees=&labels=feature&template=feature_request.md">Request feature</a>
-  </p>
-</p>
-
+___
 
 ## Quick start
 
@@ -21,13 +22,8 @@ This is a normal flutter app. You should follow the instructions in the [officia
 
 ## Bugs and feature requests
 
-Have a bug or a feature request? Please first read the [issue guidelines](https://github.com/Kishan-Dhankecha/vegcart/blob//CONTRIBUTING.md) and search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/Kishan-Dhankecha/vegcart/issues/new).
+Have a bug or a feature request? Please first read the [issue guidelines](https://github.com/Kishan-Dhankecha/vegcart/blob//CONTRIBUTING.md) and search for existing and closed issues. If your problem or idea is not addressed yet, please open a [new issue](https://github.com/Kishan-Dhankecha/vegcart/issues/new) || [Report bug](https://github.com/Kishan-Dhankecha/vegcart/issues/new?assignees=&labels=bug&template=bug_report.md) || [Request feature](https://github.com/Kishan-Dhankecha/vegcart/issues/new?assignees=&labels=feature&template=feature_request.md).
 
-
-## Creators
-
-- [Kishan Dhankecha](https://github.com/Kishan-Dhankecha)
-- [Raymond Dangdat](https://github.com/raymondDangdat)
 
 ## Support
 
@@ -39,6 +35,6 @@ Thanks to all contributors and their support:
 
 ## Copyright and license
 
-Code and documentation copyright 2018 the authors. Code released under the [MIT License](https://github.com/Kishan-Dhankecha/vegcart/blob/main/LICENSE).
+Code and documentation copyright 2018 the authors. Code released under the [![License](https://img.shields.io/github/license/kishan-dhankecha/vegcart?color=brightgreen)](https://github.com/kishan-dhankecha/vegcart/blob/prod/LICENSE).
 
 Enjoy :metal:
